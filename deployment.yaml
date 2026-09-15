@@ -7,7 +7,13 @@ metadata:
 
 spec:
   replicas: 3
-
+  
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1 
+      
   selector:
     matchLabels:
       app: flask-devops-platform
@@ -20,6 +26,6 @@ spec:
     spec:
       containers:
         - name: flask
-          image: ghcr.io/gsmohamedfarooq/flask-devops-platform:361fc23bf0a98f8bc4c5fdc254bf425a0d90cee1
+          image: ghcr.io/gsmohamedfarooq/flask-devops-platform:f4195cd2eba10b550d3cb459fbe735fdf2a77265
           ports:
             - containerPort: 5000
