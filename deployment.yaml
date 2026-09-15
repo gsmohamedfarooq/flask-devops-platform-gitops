@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask-devops-platform
+  labels:
+    app: flask-devops-platform
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: flask-devops-platform
+
+  template:
+    metadata:
+      labels:
+        app: flask-devops-platform
+
+    spec:
+      containers:
+        - name: flask
+          image: ghcr.io/gsmohamedfarooq/flask-devops-platform:0a4f148c0742370bc0fbd1bfc648f964b10fcb6a
+          ports:
+            - containerPort: 5000
