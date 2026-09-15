@@ -20,6 +20,6 @@ spec:
     spec:
       containers:
         - name: flask
-          image: ghcr.io/gsmohamedfarooq/flask-devops-platform:0a4f148c0742370bc0fbd1bfc648f964b10fcb6a
+          image: ghcr.io/gsmohamedfarooq/flask-devops-platform:361fc23bf0a98f8bc4c5fdc254bf425a0d90cee1
           ports:
             - containerPort: 5000
