@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask-green
+  namespace: flask-devops-platform
+  labels:
+    app: flask
+    version: green
+
+spec:
+  replicas: 3
+
+  selector:
+    matchLabels:
+      app: flask
+      version: green
+
+  template:
+    metadata:
+      labels:
+        app: flask
+        version: green
+
+    spec:
+      containers:
+        - name: flask
+          image: ghcr.io/gsmohamedfarooq/flask-devops-platform:6bd9162cd077aeb403f039e35f5aedf8f9ab8f0b
+          ports:
+            - containerPort: 5000
